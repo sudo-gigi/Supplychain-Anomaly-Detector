@@ -43,13 +43,13 @@ User uploads CSV
 ```
 
 ### AWS Services Used
-- **S3** — stores input CSVs and output reports
-- **Lambda** — runs the anomaly detection logic serverlessly
-- **IAM** — manages permissions between services
+- **S3** - stores input CSVs and output reports
+- **Lambda** - runs the anomaly detection logic serverlessly
+- **IAM** - manages permissions between services
 
 ### Python Libraries
-- **Pandas** — data ingestion, cleaning and anomaly detection logic
-- **ReportLab** — generates the professional PDF report
+- **Pandas** - data ingestion, cleaning and anomaly detection logic
+- **ReportLab** - generates the professional PDF report
 
 ---
 
@@ -62,8 +62,8 @@ User uploads CSV
 | Duplicate invoice | Exact match on date, supplier, item, quantity, price | Any duplicate |
 
 Severity scoring:
-- **HIGH** — price spike ≥ 50% above average, or budget overrun ≥ 40%, or any duplicate invoice
-- **MEDIUM** — price spike 20–49% above average, or budget overrun 15–39%
+- **HIGH** - price spike ≥ 50% above average, or budget overrun ≥ 40%, or any duplicate invoice
+- **MEDIUM** - price spike 20–49% above average, or budget overrun 15–39%
 
 All thresholds are configurable at the top of `lambda_function.py`.
 
@@ -131,9 +131,9 @@ Upload `procurement_sample_v2.csv` to your `inputs/` folder. After ~20 seconds, 
 
 ## Future Roadmap
 
-- [ ] SES email delivery — automatically email the report when anomalies are found
-- [ ] QuickSight dashboard — live spend visualisation
-- [ ] Supplier Risk Dashboard — score suppliers on financial, geopolitical and compliance risk
+- [ ] SES email delivery - automatically email the report when anomalies are found
+- [ ] QuickSight dashboard - live spend visualisation
+- [ ] Supplier Risk Dashboard - score suppliers on financial, geopolitical and compliance risk
 - [ ] Multi-currency support
 - [ ] Slack/Teams notification integration
 
@@ -141,4 +141,4 @@ Upload `procurement_sample_v2.csv` to your `inputs/` folder. After ~20 seconds, 
 
 ## Licence
 
-MIT — free to use and adapt.
+MIT - free to use and adapt.
