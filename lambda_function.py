@@ -51,9 +51,9 @@ from reportlab.platypus import (
 )
 
 
-# ─────────────────────────────────────────────
+
 # CONFIG
-# ─────────────────────────────────────────────
+
 LOCAL_FILE               = "procurement_sample_v2.csv"
 CSV_OUTPUT               = "anomalies_found.csv"
 PDF_OUTPUT               = "anomaly_report.pdf"
@@ -75,9 +75,8 @@ MID_GRAY    = colors.HexColor("#BDC3C7")
 DARK_GRAY   = colors.HexColor("#2C3E50")
 
 
-# ─────────────────────────────────────────────
 # LOAD DATA
-# ─────────────────────────────────────────────
+
 def load_data(filepath: str) -> pd.DataFrame:
     df = pd.read_csv(filepath, parse_dates=["Date"])
     df.columns = df.columns.str.strip()
@@ -85,9 +84,9 @@ def load_data(filepath: str) -> pd.DataFrame:
     return df
 
 
-# ─────────────────────────────────────────────
+
 # ANOMALY DETECTION
-# ─────────────────────────────────────────────
+
 def detect_price_spikes(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     df["price_pct_above_avg"] = (
@@ -144,9 +143,9 @@ def detect_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     return dupes[["Date", "Supplier", "Category", "Item", "anomaly_type", "detail", "severity"]]
 
 
-# ─────────────────────────────────────────────
+
 # SUMMARY STATS
-# ─────────────────────────────────────────────
+
 def spend_summary(df: pd.DataFrame) -> dict:
     total_spend  = df["Total_Spend"].sum()
     total_budget = df["Budgeted_Spend"].sum()
@@ -163,9 +162,9 @@ def spend_summary(df: pd.DataFrame) -> dict:
     }
 
 
-# ─────────────────────────────────────────────
+
 # PRINT TERMINAL REPORT
-# ─────────────────────────────────────────────
+
 def print_report(summary: dict, anomalies: pd.DataFrame):
     divider = "-" * 65
     print(divider)
@@ -198,9 +197,9 @@ def print_report(summary: dict, anomalies: pd.DataFrame):
     print(f"\n{divider}\n  END OF REPORT\n{divider}")
 
 
-# ─────────────────────────────────────────────
+
 # SAVE CSV
-# ─────────────────────────────────────────────
+
 def save_csv(anomalies: pd.DataFrame, path: str = CSV_OUTPUT):
     if not anomalies.empty:
         anomalies.to_csv(path, index=False)
@@ -209,9 +208,9 @@ def save_csv(anomalies: pd.DataFrame, path: str = CSV_OUTPUT):
         print("\nNo anomalies to save.")
 
 
-# ─────────────────────────────────────────────
+ 
 # BUILD PDF
-# ─────────────────────────────────────────────
+
 def build_pdf(summary: dict, anomalies: pd.DataFrame, path: str = PDF_OUTPUT):
 
     doc = SimpleDocTemplate(
@@ -221,7 +220,7 @@ def build_pdf(summary: dict, anomalies: pd.DataFrame, path: str = PDF_OUTPUT):
         topMargin=20*mm, bottomMargin=20*mm,
     )
 
-    # ── Styles ──────────────────────────────
+    # Styles 
     base = getSampleStyleSheet()
 
     title_style = ParagraphStyle(
@@ -285,12 +284,12 @@ def build_pdf(summary: dict, anomalies: pd.DataFrame, path: str = PDF_OUTPUT):
     story = []
     generated = datetime.now().strftime("%d %B %Y at %H:%M")
 
-    # ── Header ───────────────────────────────
+    #  Header 
     story.append(Paragraph("Supply Chain Cost Anomaly Report", title_style))
     story.append(Paragraph(f"Generated: {generated}", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=2, color=MID_BLUE, spaceAfter=10))
 
-    # ── Spend Summary Table ───────────────────
+    #  Spend Summary Table 
     story.append(Paragraph("Spend Summary", section_style))
 
     direction = "over budget" if summary["spend_vs_budget_pct"] > 0 else "under budget"
@@ -323,7 +322,7 @@ def build_pdf(summary: dict, anomalies: pd.DataFrame, path: str = PDF_OUTPUT):
     ]))
     story.append(summary_table)
 
-    # ── Spend by Supplier Table ───────────────
+    #  Spend by Supplier Table 
     story.append(Spacer(1, 8))
     story.append(Paragraph("Spend by supplier", section_style))
 
@@ -348,7 +347,7 @@ def build_pdf(summary: dict, anomalies: pd.DataFrame, path: str = PDF_OUTPUT):
     ]))
     story.append(sup_table)
 
-    # ── Anomalies Section ─────────────────────
+    #  Anomalies Section
     story.append(Spacer(1, 8))
     story.append(HRFlowable(width="100%", thickness=1, color=MID_GRAY, spaceAfter=6))
     story.append(Paragraph(f"Anomalies Detected: {len(anomalies)}", section_style))
@@ -366,7 +365,7 @@ def build_pdf(summary: dict, anomalies: pd.DataFrame, path: str = PDF_OUTPUT):
 
             story.append(Paragraph(f"{label} ({len(subset)} found)", sev_style))
 
-            # Use Paragraph objects in cells so long text wraps correctly
+           
             cell_style = ParagraphStyle(
                 "Cell", fontName="Helvetica", fontSize=8.5,
                 textColor=DARK_GRAY, leading=12,
@@ -375,7 +374,7 @@ def build_pdf(summary: dict, anomalies: pd.DataFrame, path: str = PDF_OUTPUT):
                 "CellBold", fontName="Helvetica-Bold", fontSize=8.5,
                 textColor=colors.white, leading=12,
             )
-            # Col widths: 25+35+32+28+50 = 170mm — fills the full usable page width
+           
             col_widths = [25*mm, 35*mm, 32*mm, 28*mm, 50*mm]
 
             anom_data = [[
@@ -409,7 +408,7 @@ def build_pdf(summary: dict, anomalies: pd.DataFrame, path: str = PDF_OUTPUT):
             story.append(anom_table)
             story.append(Spacer(1, 8))
 
-    # ── Footer ───────────────────────────────
+    #  Footer
     story.append(Spacer(1, 10))
     story.append(HRFlowable(width="100%", thickness=1, color=MID_GRAY))
     story.append(Spacer(1, 4))
@@ -423,9 +422,9 @@ def build_pdf(summary: dict, anomalies: pd.DataFrame, path: str = PDF_OUTPUT):
     print(f"PDF saved to: {path}")
 
 
-# ─────────────────────────────────────────────
+
 # MAIN
-# ─────────────────────────────────────────────
+
 def run(filepath: str):
     df = load_data(filepath)
 
@@ -448,9 +447,8 @@ if __name__ == "__main__":
     run(LOCAL_FILE)
 
 
-# ─────────────────────────────────────────────
+
 # AWS LAMBDA HANDLER 
-# ─────────────────────────────────────────────
  
 def lambda_handler(event, context):
      s3     = boto3.client("s3")
