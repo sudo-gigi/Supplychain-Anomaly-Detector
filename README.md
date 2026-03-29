@@ -6,7 +6,7 @@ An AWS-powered tool that automatically detects cost anomalies in procurement spe
 
 ## The Problem
 
-Procurement and supply chain teams manage hundreds of supplier transactions every month. Hidden within that data are costly anomalies suppliers quietly charging above agreed rates, invoices being submitted twice, budgets being exceeded without anyone noticing. Most SMEs have no automated way to catch these issues, and by the time they're spotted manually the damage is already done.
+Procurement and supply chain teams manage hundreds of supplier transactions every month. Hidden within that data are costly anomalies, suppliers quietly charging above agreed rates, invoices being submitted twice, budgets being exceeded without anyone noticing. Most SMEs have no automated way to catch these issues, and by the time they're spotted manually the damage is already done.
 
 ---
 
