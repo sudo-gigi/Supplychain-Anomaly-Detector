@@ -1,0 +1,51 @@
+Date,Supplier,Category,Item,Quantity,Unit_Price,Historical_Avg_Unit_Price,Total_Spend,Budgeted_Spend
+2024-01-03,Apex Logistics,Packaging,Pallet Wrap,100,2.50,2.50,250.00,260.00
+2024-01-05,BridgePro Supplies,Packaging,Cardboard Boxes,200,1.20,1.20,240.00,250.00
+2024-01-07,Apex Logistics,Packaging,Bubble Wrap,150,1.80,1.80,270.00,280.00
+2024-01-09,CoreTech Parts,Fasteners,Steel Bolts M8,500,0.45,0.45,225.00,230.00
+2024-01-11,Delta Freight,Fuel,Forklift Fuel,80,1.95,1.95,156.00,160.00
+2024-01-14,EastWest Trading,Packaging,Stretch Film,120,3.10,3.10,372.00,380.00
+2024-01-15,BridgePro Supplies,Packaging,Cardboard Boxes,180,1.20,1.20,216.00,220.00
+2024-01-17,CoreTech Parts,Fasteners,Steel Bolts M10,400,0.60,0.60,240.00,250.00
+2024-01-19,Apex Logistics,Packaging,Pallet Wrap,90,2.50,2.50,225.00,230.00
+2024-01-22,FrontLine Packaging,Packaging,Foam Inserts,60,4.20,4.20,252.00,260.00
+2024-01-24,Delta Freight,Fuel,Forklift Fuel,75,1.95,1.95,146.25,150.00
+2024-01-26,GreenPath Materials,Packaging,Recycled Cardboard,300,0.95,0.95,285.00,290.00
+2024-01-28,EastWest Trading,Packaging,Stretch Film,110,3.10,3.10,341.00,350.00
+2024-01-30,CoreTech Parts,Fasteners,Steel Bolts M8,450,0.45,0.45,202.50,210.00
+2024-02-02,BridgePro Supplies,Packaging,Bubble Wrap,200,1.80,1.80,360.00,370.00
+2024-02-04,Apex Logistics,Packaging,Pallet Wrap,100,2.50,2.50,250.00,260.00
+2024-02-06,FrontLine Packaging,Packaging,Foam Inserts,55,4.20,4.20,231.00,240.00
+2024-02-08,Delta Freight,Fuel,Forklift Fuel,85,1.95,1.95,165.75,170.00
+2024-02-10,GreenPath Materials,Packaging,Recycled Cardboard,280,0.95,0.95,266.00,275.00
+2024-02-12,CoreTech Parts,Fasteners,Steel Bolts M10,380,0.60,0.60,228.00,235.00
+2024-02-14,EastWest Trading,Packaging,Stretch Film,100,3.10,3.10,310.00,320.00
+2024-02-16,BridgePro Supplies,Packaging,Cardboard Boxes,210,1.20,1.20,252.00,260.00
+2024-02-18,Apex Logistics,Packaging,Bubble Wrap,140,1.80,1.80,252.00,260.00
+2024-02-20,FrontLine Packaging,Packaging,Foam Inserts,70,4.20,4.20,294.00,300.00
+2024-02-22,Delta Freight,Fuel,Forklift Fuel,90,1.95,1.95,175.50,180.00
+2024-02-24,CoreTech Parts,Fasteners,Steel Bolts M8,500,0.45,0.45,225.00,230.00
+2024-02-26,GreenPath Materials,Packaging,Recycled Cardboard,260,0.95,0.95,247.00,255.00
+2024-02-28,EastWest Trading,Packaging,Stretch Film,115,3.10,3.10,356.50,365.00
+2024-03-02,Apex Logistics,Packaging,Pallet Wrap,95,2.50,2.50,237.50,245.00
+2024-03-04,BridgePro Supplies,Packaging,Cardboard Boxes,190,1.20,1.20,228.00,235.00
+2024-03-06,CoreTech Parts,Fasteners,Steel Bolts M10,420,0.60,0.60,252.00,260.00
+2024-03-08,FrontLine Packaging,Packaging,Foam Inserts,65,4.20,4.20,273.00,280.00
+2024-03-10,Delta Freight,Fuel,Forklift Fuel,78,1.95,1.95,152.10,158.00
+2024-03-12,GreenPath Materials,Packaging,Recycled Cardboard,310,0.95,0.95,294.50,300.00
+2024-03-14,Apex Logistics,Packaging,Pallet Wrap,100,3.20,2.50,320.00,260.00
+2024-03-16,EastWest Trading,Packaging,Stretch Film,120,3.10,3.10,372.00,380.00
+2024-03-18,BridgePro Supplies,Packaging,Bubble Wrap,175,1.80,1.80,315.00,320.00
+2024-03-20,CoreTech Parts,Fasteners,Steel Bolts M8,500,0.45,0.45,225.00,230.00
+2024-03-22,Delta Freight,Fuel,Forklift Fuel,85,3.40,1.95,289.00,170.00
+2024-03-24,FrontLine Packaging,Packaging,Foam Inserts,60,4.20,4.20,252.00,260.00
+2024-03-26,GreenPath Materials,Packaging,Recycled Cardboard,290,0.95,0.95,275.50,285.00
+2024-03-28,BridgePro Supplies,Packaging,Cardboard Boxes,200,1.20,1.20,240.00,250.00
+2024-03-28,BridgePro Supplies,Packaging,Cardboard Boxes,200,1.20,1.20,240.00,250.00
+2024-03-30,Apex Logistics,Packaging,Bubble Wrap,160,1.80,1.80,288.00,295.00
+2024-04-01,CoreTech Parts,Fasteners,Steel Bolts M10,400,0.95,0.60,380.00,250.00
+2024-04-03,EastWest Trading,Packaging,Stretch Film,110,3.10,3.10,341.00,350.00
+2024-04-05,Delta Freight,Fuel,Forklift Fuel,80,1.95,1.95,156.00,160.00
+2024-04-07,FrontLine Packaging,Packaging,Foam Inserts,55,6.80,4.20,374.00,240.00
+2024-04-09,GreenPath Materials,Packaging,Recycled Cardboard,270,0.95,0.95,256.50,265.00
+2024-04-11,Apex Logistics,Packaging,Pallet Wrap,100,2.50,2.50,250.00,260.00
